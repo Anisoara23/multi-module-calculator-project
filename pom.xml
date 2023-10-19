@@ -12,6 +12,7 @@
         <module>calculator-service</module>
         <module>calculator-implementation</module>
         <module>validator-service</module>
+        <module>validator-implementation</module>
     </modules>
 
     <properties>
