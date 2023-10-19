@@ -43,6 +43,10 @@
             <artifactId>junit-platform-suite</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>common-data</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -9,6 +9,8 @@
     <file url="file://$PROJECT_DIR$/commons/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/validator-implementation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/validator-implementation/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/validator-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/validator-service/src/main/resources" charset="UTF-8" />
   </component>
