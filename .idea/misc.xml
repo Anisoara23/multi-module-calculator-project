@@ -11,6 +11,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/calculator-web-app/pom.xml" />
         <option value="$PROJECT_DIR$/commons/pom.xml" />
       </set>
     </option>
