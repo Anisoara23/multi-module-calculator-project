@@ -6,28 +6,26 @@
     <parent>
         <groupId>org.example</groupId>
         <artifactId>multi-module-calculator-project</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>calculator-interface</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <shade.plugin.version>3.2.0</shade.plugin.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>calculator-implementation</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>validator-implementation</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 
@@ -36,7 +34,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>${shade.plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>
