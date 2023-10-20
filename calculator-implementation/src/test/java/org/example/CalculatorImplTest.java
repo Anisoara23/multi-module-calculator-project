@@ -1,10 +1,12 @@
 package org.example;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorImplTest {
     private Calculator calculator;
@@ -35,5 +37,15 @@ class CalculatorImplTest {
     void test(String expression, double expectedResult) {
         double actualResult = calculator.calculate(expression);
         assertEquals(Math.round(expectedResult), Math.round(actualResult));
+    }
+
+    @Test
+    void testWhenDivisionByZero_thenThrow() {
+        String expression = "10/0";
+        String expectedErrorMessage = "Division by zero!";
+
+        String actualErrorMessage = assertThrows(IllegalArgumentException.class, () -> calculator.calculate(expression)).getMessage();
+
+        assertEquals(expectedErrorMessage, actualErrorMessage);
     }
 }

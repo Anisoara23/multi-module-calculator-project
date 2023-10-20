@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import static org.example.data.Operator.*;
-import static org.example.data.Parenthesis.*;
+import static org.example.data.Operator.DIVIDE;
+import static org.example.data.Operator.MINUS;
+import static org.example.data.Operator.MULTIPLY;
+import static org.example.data.Operator.PLUS;
+import static org.example.data.Operator.getCharOperators;
+import static org.example.data.Parenthesis.LEFT_PARENTHESIS;
+import static org.example.data.Parenthesis.RIGHT_PARENTHESIS;
+import static org.example.data.Parenthesis.getCharParenthesis;
 
-public class CalculatorImpl implements Calculator{
+public class CalculatorImpl implements Calculator {
     public final Stack<Object> expressionElementsStack = new Stack<>();
 
     public static final List<Character> OPERATORS_AND_PARENTHESIS = new ArrayList<>();
@@ -71,7 +77,9 @@ public class CalculatorImpl implements Calculator{
                     calculateNonPriorityOperations();
                 } else {
                     Double number = getNumber(expressionCharArray);
-                    if (expressionElementsStack.peek().equals(MULTIPLY.operator) || expressionElementsStack.peek().equals(DIVIDE.operator)) {
+                    if (expressionElementsStack.peek().equals(DIVIDE.operator) && number == 0) {
+                        throw new IllegalArgumentException("Division by zero!");
+                    } else if (expressionElementsStack.peek().equals(MULTIPLY.operator) || expressionElementsStack.peek().equals(DIVIDE.operator)) {
                         char op = (char) expressionElementsStack.pop();
                         number = switch (op) {
                             case '*' -> (Double) expressionElementsStack.pop() * number;
